@@ -5,13 +5,67 @@
 
 body {
     font-family: 'Muli', sans-serif;
+    background: #111;
     overflow: hidden;
     margin: 0;
-    background: #111;
+}
+
+.wrapper {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* я хотел добавить анимацию, но что-то пошло не так =) */
+
+
+/* 
+@keyframes flipInX {
+    from {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    40% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    60% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+    80% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+    to {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
+    }
+}
+
+.animate__flipInX {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+} */
+
+.header {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 30px;
+    /* transition: 0.3s;
+     animation: flipInX 0.1s; */
 }
 
 .container {
@@ -31,6 +85,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    transition: all 500ms ease-in-out;
 }
 
 .slide h3 {
@@ -39,8 +94,14 @@ body {
     bottom: 20px;
     left: 20px;
     margin: 0;
+    opacity: 0;
 }
 
 .slide.active {
     flex: 10;
+}
+
+.slide.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
 }
