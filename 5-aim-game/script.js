@@ -3,11 +3,10 @@ const startBtn = document.querySelector('#start'),
     timeList = document.querySelector('#time-list'),
     timeEl = document.querySelector('#time'),
     board = document.querySelector('#board'),
-    colors = ['#c866fd', '#fde866', '#ff1a40', '#3bff1a', '#2ecc71', '#1ad5ff'];
+    colors = ['#c866fd', '#fde866', '#ff1a40', '#3bff1a', '#2ecc71', '#1ad5ff'],
+    overlay = document.querySelector('.overlay');
 let time = 0,
     score = 0;
-
-
 
 startBtn.addEventListener('click', (event) => {
     event.preventDefault();
